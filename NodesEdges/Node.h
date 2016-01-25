@@ -23,7 +23,7 @@ public:
 	list<Edge*>& getOutgoingEdges() { return m_outgoingEdges; }
 
 
-protected:
+private:
 
 	static string generateId();
 

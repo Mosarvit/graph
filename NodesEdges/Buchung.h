@@ -25,14 +25,12 @@ public:
 	
 	Buchung(string vorname, string name, string adresse, deque<Edge*> result);
 
-	string &getVorname() { return m_vorname; };
-	string &getName() { return m_name; };
-	string &getAdresse() { return m_adresse; };
-	deque<Edge*> &getEdges() { return m_edges;  };
-
-	double getGesamtPrice();
+	const string &getVorname() { return m_vorname; };
+	const string &getName() { return m_name; };
+	const string &getAdresse() { return m_adresse; };
+	const deque<Edge*> &getEdges() { return m_edges;  };
+	const double getGesamtPrice();
 	
-	static string printAll();
 	~Buchung();
 
 private:

@@ -12,7 +12,7 @@ Buchung::Buchung(string vorname, string name, string adresse, deque<Edge*> route
 	//cout << "Size of the buchung : " << ((*next(m_Buchungen.begin(), 0))->m_edges.size()) << endl;
 }
  
-double Buchung::getGesamtPrice()
+const double Buchung::getGesamtPrice()
 {
 
 	// Addition der Preise jeder Route
