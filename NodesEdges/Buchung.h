@@ -36,17 +36,12 @@ public:
 	~Buchung();
 
 private:
-//	static int count;
+
 	static list<Buchung*> m_Buchungen;
 	string m_vorname;
 	string m_name;
 	string m_adresse;
-	deque<Edge*> m_edges;
-
-	
+	deque<Edge*> m_edges;	
 };
-
-
-
 
 #endif

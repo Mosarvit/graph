@@ -1,5 +1,7 @@
 #include "Buchung.h"
 
+list<Buchung*> Buchung::m_Buchungen;
+
 Buchung::Buchung(string vorname, string name, string adresse, deque<Edge*> route) : m_vorname(vorname), m_name(name), m_adresse(adresse), m_edges(route) {
 
 	m_Buchungen.push_back(this);
@@ -12,6 +14,9 @@ Buchung::Buchung(string vorname, string name, string adresse, deque<Edge*> route
  
 double Buchung::getGesamtPrice()
 {
+
+	// Addition der Preise jeder Route
+
 	double db = 0.0;
 	for (auto edge : m_edges) {
 
@@ -19,32 +24,7 @@ double Buchung::getGesamtPrice()
 	}
 
 	return db;
-}
-
-string Buchung::printAll()
-{
-	
-	stringstream ss;
-	
-	for (Buchung *buchung : m_Buchungen) {
-
-		ss << "Address: " << buchung->m_adresse << endl;
-
-		ss << "Route : " << endl;
-
-		cout << "Size of the buchung : " << buchung->m_edges.size() << endl;
-
-		for (Edge* edge : buchung->m_edges) {
-
-			cout << edge->toString() << endl;
-		}
-	}
-
-	return ss.str();
-}
-;
-
-list<Buchung*> Buchung::m_Buchungen;
+} 
 
 Buchung::~Buchung()
 {
